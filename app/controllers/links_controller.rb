@@ -17,6 +17,7 @@ class LinksController < ApplicationController
   def short_link
     link = Link.find_by(uid: params[:link_uid])
     if link.present?
+      link.update(count: link.count + 1)
       redirect_to link.url
     else
       redirect_to root_path
