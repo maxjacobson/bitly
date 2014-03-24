@@ -2,7 +2,7 @@
 
 <% @links.each do |link| %>
 
-  <p><%= link_to link.url, short_link_path(link.uid) %> - <%= pluralize link.count, 'visit' %></p>
+  <p> <%= link.url %> -  <%= link_to short_link_url(link.uid) %> - <%= pluralize link.count, 'visit' %></p>
 
 <% end %>
 
