@@ -1,0 +1,9 @@
+<h1>Links</h1>
+
+<% @links.each do |link| %>
+
+  <p><%= link_to 'link', short_link_path(link.uid) %></p>
+
+<% end %>
+
+<%= link_to 'new link', new_link_path %>
