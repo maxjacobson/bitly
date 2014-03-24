@@ -16,7 +16,11 @@ class LinksController < ApplicationController
 
   def short_link
     link = Link.find_by(uid: params[:link_uid])
-    redirect_to link.url
+    if link.present?
+      redirect_to link.url
+    else
+      redirect_to root_path
+    end
   end
 
   private
