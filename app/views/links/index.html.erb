@@ -2,7 +2,7 @@
 
 <% @links.each do |link| %>
 
-  <p><%= link_to 'link', short_link_path(link.uid) %></p>
+  <p><%= link_to link.url, short_link_path(link.uid) %></p>
 
 <% end %>
 
