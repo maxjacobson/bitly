@@ -9,7 +9,7 @@
   <% @links.each do |link| %>
     <tr>
       <td><%= link.url %></td>
-      <td><%= link_to short_link_url(link.uid) %></td>
+      <td><%= link_to short_link_url(link.uid), short_link_url(link.uid) %></td>
       <td><%= pluralize link.count, 'visit' %></td>
     </tr>
   <% end %>
