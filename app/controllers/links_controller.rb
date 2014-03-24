@@ -1,17 +1,12 @@
 class LinksController < ApplicationController
   def index
+    @link = Link.new
     @links = Link.all
   end
-  def new
-    @link = Link.new
-  end
+
   def create
-    @link = Link.new(link_params)
-    if @link.save
-      redirect_to root_path
-    else
-      render :new
-    end
+    Link.create(link_params)
+    redirect_to root_path
   end
 
   def short_link
